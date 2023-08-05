@@ -23,6 +23,120 @@
   }
 }
 @layer components {
+  @keyframes slideOutToRight {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+
+  .menu-images {
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .nav-menu {
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+  }
+
+  .nav-menu.active {
+    animation-name: slideInFromRight;
+  }
+
+  .nav-menu.hidden {
+    animation-name: slideOutToRight;
+  }
+  /* burger menu animation  */
+  .navToggle {
+    padding: 0px 0px 4px 0px;
+    -webkit-transform: all 0.4s linear;
+    transform: all 0.4s linear;
+    margin-left: 10px;
+  }
+  .navToggle .icon-bar {
+    width: 35px;
+    height: 2px;
+    background-color: #8e8688;
+    display: block;
+    margin: 5px 0;
+    position: relative;
+    -webkit-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+  }
+
+  .navToggle.active .icon-bar:nth-of-type(1) {
+    -webkit-transform: rotate(44deg);
+    transform: rotate(44deg);
+    top: 10px;
+  }
+  .navToggle.active .icon-bar:nth-of-type(2) {
+    opacity: 0;
+  }
+  .navToggle.active .icon-bar:nth-of-type(3) {
+    opacity: 0;
+  }
+
+  .navToggle.active .icon-bar:nth-of-type(4) {
+    -webkit-transform: rotate(125deg);
+    transform: rotate(125deg);
+    top: -10px;
+  }
+  /* burger menu animation  */
+  @keyframes slideIn {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slideIn {
+    animation: slideIn 0.5s forwards;
+  }
+
+  /* slider top border color animation start */
+  @keyframes changeBorderColor {
+    from {
+      border-color: gray;
+    }
+    to {
+      border-color: white;
+    }
+  }
+
+  .border-animation {
+    animation: changeBorderColor 0.5s ease-in-out;
+  }
+  @keyframes changeBorderColor {
+    from {
+      border-color: gray;
+    }
+    to {
+      border-color: white;
+    }
+  }
+
+  .animate-border-color {
+    animation: changeBorderColor 0.5s;
+  }
+  /* slider top border color animation end */
 }
 @layer utilities {
 }

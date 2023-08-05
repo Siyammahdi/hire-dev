@@ -1,12 +1,7 @@
 import Link from "next/link";
+import { navLink } from "../Data";
 
 const Footer = () => {
-  const navLink = [
-    { name: "Home", link: "/" },
-    { name: "About", link: "/about" },
-    { name: "Project", link: "/projects" },
-    { name: "Contact", link: "/contact-us" },
-  ];
   return (
     <>
       <footer className="bg-[#F1F1F1]">

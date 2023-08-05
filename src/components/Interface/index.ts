@@ -9,3 +9,7 @@ export type Project = {
   description: string;
   type: String;
 };
+export interface IHowWork {
+  title: string;
+  description: string;
+}

@@ -1,4 +1,4 @@
-import { Project } from "../Interface";
+import { IHowWork, Project } from "../Interface";
 
 export const projects: Project[] = [
   {
@@ -42,4 +42,44 @@ export const options: string[] = [
   "Back End",
   "Mobile",
   "Desktop",
+];
+export const howWorks: IHowWork[] = [
+  {
+    title: "Business",
+    description: "Understand & PLanning",
+  },
+  {
+    title: "Development",
+    description: "Design & Develop",
+  },
+  {
+    title: "Deployment",
+    description: "Testing & Deploying",
+  },
+  {
+    title: "Monitoring",
+    description: "Monitoring & Consultancy",
+  },
+];
+
+export const sliderData: IHowWork[] = [
+  {
+    title: "WEB SOLUTION",
+    description: "We design and develop interactive we apps",
+  },
+  {
+    title: "APPS DEVELOPMENT",
+    description: "We design and develop interactive we apps",
+  },
+  {
+    title: "CUSTOMIZED SOLUTION",
+    description: "We design and develop interactive we apps",
+  },
+];
+
+export const navLink = [
+  { name: "Home", link: "/" },
+  { name: "About", link: "/about" },
+  { name: "Project", link: "/projects" },
+  { name: "Contact", link: "/contact-us" },
 ];
