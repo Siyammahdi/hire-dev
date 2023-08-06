@@ -1,9 +1,8 @@
 const AboutUs = () => {
   return (
     <>
-      <section className="container flex flex-wrap items-center py-10">
+      <section className="container flex flex-wrap items-center py-[150px]">
         <div className="w-full lg:w-1/2 pr-4">
-          <p className="text-5xl  font-bold">About </p>
           <p className="text-2xl py-5 font-medium">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
             magnam tempore maxime nobis corrupti exercitationem facere iusto

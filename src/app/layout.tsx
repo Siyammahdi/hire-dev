@@ -16,9 +16,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main className="min-h-[calc(100vh-210px)]">{children}</main>
-        <Footer />
+        <main>
+          <Header />
+          <section className="pt-[12vh] min-h-[calc(100vh-105px)]">
+            {children}
+          </section>
+
+          <Footer />
+        </main>
       </body>
     </html>
   );

@@ -7,13 +7,13 @@ const ProjectOptions: React.FC<IProjectOptionsProps> = ({
   currentOption,
 }) => {
   return (
-    <div className="py-4">
+    <div className="py-4 text-end">
       {options.map((option, index) => {
         return (
           <button
             key={index}
-            className={`  font-bold py-2 px-4 rounded inline-flex items-center mx-2 my-2 ${
-              currentOption === option ? "bg-[#F4E8E4]" : ""
+            className={`text-xs   py-2 px-1 rounded inline-flex items-center mx-1 my-2 ${
+              currentOption === option ? "font-bold" : ""
             }`}
             onClick={() => setCurrentOption(option)}
           >
