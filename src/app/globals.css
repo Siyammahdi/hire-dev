@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,7 @@
 @layer base {
   html {
     -webkit-tap-highlight-color: transparent;
-    @apply font-raleWay scroll-smooth scroll-pt-[10vh];
+    @apply font-sans scroll-smooth scroll-pt-[10vh];
   }
   body {
     @apply !overflow-x-hidden text-black;
@@ -23,43 +23,22 @@
   }
 }
 @layer components {
-  @keyframes slideOutToRight {
-    from {
-      transform: translateX(0);
+  /* nav amination  */
+  @keyframes topToBottom {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
     }
-    to {
-      transform: translateX(100%);
-    }
-  }
-
-  .menu-images {
-    animation-duration: 0.3s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: both;
-  }
-
-  @keyframes slideInFromRight {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0);
+    100% {
+      transform: translateY(0);
+      opacity: 1;
     }
   }
 
-  .nav-menu {
-    animation-duration: 0.3s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: both;
+  .animate-nav {
+    animation: topToBottom 0.5s forwards;
   }
 
-  .nav-menu.active {
-    animation-name: slideInFromRight;
-  }
-
-  .nav-menu.hidden {
-    animation-name: slideOutToRight;
-  }
   /* burger menu animation  */
   .navToggle {
     padding: 0px 0px 4px 0px;
@@ -69,18 +48,26 @@
   }
   .navToggle .icon-bar {
     width: 35px;
-    height: 2px;
+    height: 3px;
     background-color: #8e8688;
     display: block;
-    margin: 5px 0;
+    margin: 4px 0;
     position: relative;
     -webkit-transition: all 0.4s linear;
     transition: all 0.4s linear;
   }
+  .navToggle .icon-bar:nth-child(2) {
+    width: 25px;
+  }
+
+  /* Target the 3rd child of .navToggle */
+  .navToggle .icon-bar:nth-child(3) {
+    width: 25px;
+  }
 
   .navToggle.active .icon-bar:nth-of-type(1) {
     -webkit-transform: rotate(44deg);
-    transform: rotate(44deg);
+    transform: rotate(55deg);
     top: 10px;
   }
   .navToggle.active .icon-bar:nth-of-type(2) {
@@ -89,6 +76,9 @@
   .navToggle.active .icon-bar:nth-of-type(3) {
     opacity: 0;
   }
+  .navToggle.active .icon-bar {
+    background-color: black;
+  }
 
   .navToggle.active .icon-bar:nth-of-type(4) {
     -webkit-transform: rotate(125deg);
@@ -96,13 +86,16 @@
     top: -10px;
   }
   /* burger menu animation  */
+
+  /* slider animation  */
+
   @keyframes slideIn {
     0% {
-      transform: translateX(100%);
+      transform: translateY(100%);
       opacity: 0;
     }
     100% {
-      transform: translateX(0);
+      transform: translateY(0);
       opacity: 1;
     }
   }
@@ -111,6 +104,7 @@
     animation: slideIn 0.5s forwards;
   }
 
+  /* slider animation  */
   /* slider top border color animation start */
   @keyframes changeBorderColor {
     from {

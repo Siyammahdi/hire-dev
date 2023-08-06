@@ -1,11 +1,11 @@
 const Ideas = () => {
   return (
     <>
-      <section className="container py-10">
-        <p className="text-xl text-center pb-3 text-[#8F8688]">
+      <section className="container py-[150px]">
+        <p className="text-[30px] font-bold text-center pb-10 text-[#8F8688]">
           GROW YOUR IDEAS WITH US
         </p>
-        <p className="text-[#AA9B9F] text-center text-base leading-7 px-5">
+        <p className="text-[#AA9B9F] text-center text-base ">
           UQIDEV is a Web design & development company in Bangladesh bringing
           you solutions of the very best kind to your technical challenges &
           ambitions. We hold huge specialization in putting up custom-made and

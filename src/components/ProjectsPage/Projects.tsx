@@ -9,8 +9,8 @@ const Projects = () => {
   const [currentOption, setCurrentOption] = useState("All");
   const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
     return (
-      <div className="w-full md:w-1/2 lg:w-4/12 xl:w-3/12 p-3 rounded">
-        <div className="shadow-lg">
+      <div className="w-full md:w-1/2 p-3 py-4 rounded">
+        <div className="shadow hover:shadow-lg cursor-pointer">
           <img className="w-full" src={"/download.jpg"} alt={project.name} />
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">{project.name}</div>
@@ -21,8 +21,7 @@ const Projects = () => {
     );
   };
   return (
-    <section className="container  py-10">
-      <p className="text-5xl  font-bold">Projects</p>
+    <section className="container  py-[150px]">
       <ProjectOptions
         currentOption={currentOption}
         setCurrentOption={setCurrentOption}

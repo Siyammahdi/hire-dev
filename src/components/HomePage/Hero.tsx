@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import { sliderData } from "../Data";
 import { IHowWork } from "../Interface";
+// ... (existing imports)
 
 const Hero = () => {
   const [currentData, setCurrentData] = useState<IHowWork>(sliderData[0]);
@@ -12,6 +13,7 @@ const Hero = () => {
     const changeDataAutomatically = () => {
       const currentIndex = sliderData.findIndex((data) => data === currentData);
       const nextIndex = (currentIndex + 1) % sliderData.length;
+
       setCurrentData(sliderData[nextIndex]);
     };
 
@@ -24,6 +26,8 @@ const Hero = () => {
 
   useEffect(() => {
     setAnimate(true);
+
+    // After the animation ends, clear the previousData state to hide it
     const timer = setTimeout(() => {
       setAnimate(false);
     }, 500);
@@ -32,9 +36,10 @@ const Hero = () => {
 
   return (
     <>
-      <section className="bg-[#F4E8E4] py-10">
+      <section className="bg-[#F4E8E4] h-[90vh] flex items-center">
         <div className="container flex flex-wrap items-center">
-          <div className="w-8/12 pr-10 overflow-hidden">
+          <div className="w-8/12 pr-10 ">
+            {/* Show the currentData with the slideIn animation */}
             {currentData && (
               <div className={`pb-10 ${animate ? "animate-slideIn" : ""}`}>
                 <h4 className="text-[#8E8688] text-2xl font-medium">
@@ -50,11 +55,11 @@ const Hero = () => {
               {sliderData.map((data, index) => (
                 <div className="pr-5 w-4/12" key={index}>
                   <div
-                    className={`border-t-[2px] ${
+                    className={`border-t-[2px] group ${
                       currentData?.title === data?.title
-                        ? "border-white"
-                        : "border-[gray]"
-                    }  pt-3 cursor-pointer`}
+                        ? "border-gray-400"
+                        : "border-white"
+                    } pt-3 cursor-pointer transition-colors`}
                     onClick={() => setCurrentData(data)}
                   >
                     <p className="text-[19px] text-[#8E8688]">{data?.title}</p>

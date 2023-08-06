@@ -22,6 +22,8 @@ module.exports = {
       },
     },
     fontFamily: {
+      rajdhani: ["Rajdhani", "sans-serif"],
+      sans: ["Work Sans", "sans-serif"],
       raleWay: ["Raleway", "sans-serif"],
     },
     extend: {

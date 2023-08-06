@@ -5,10 +5,10 @@ const Footer = () => {
   return (
     <>
       <footer className="bg-[#F1F1F1]">
-        <div className="container flex flex-wrap justify-between border-t-[1px] border-[black] py-10">
+        <div className="container flex flex-wrap justify-between  py-10">
           <div className="w-1/2">
-            <p>
-              Steve McGugan Industrial Design{" "}
+            <p className="text-sm space-x-[1px] uppercase">
+              &#169; UQIDEV TECHNOLOGIES -
               <span className="font-bold">
                 {new Date().getFullYear() || "2023"}
               </span>{" "}
@@ -19,7 +19,7 @@ const Footer = () => {
               {navLink.map((link, index) => (
                 <li key={index}>
                   <Link
-                    className="hover:text-[black] hover:underline"
+                    className="hover:text-[black] hover:underline text-sm"
                     href={link.link}
                   >
                     {link.name}
