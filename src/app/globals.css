@@ -102,6 +102,7 @@
 
   .animate-slideIn {
     animation: slideIn 0.5s forwards;
+    transition: all 0.3s;
   }
 
   /* slider animation  */
@@ -133,4 +134,14 @@
   /* slider top border color animation end */
 }
 @layer utilities {
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }

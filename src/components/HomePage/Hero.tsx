@@ -17,7 +17,7 @@ const Hero = () => {
       setCurrentData(sliderData[nextIndex]);
     };
 
-    const interval = setInterval(changeDataAutomatically, 3000);
+    const interval = setInterval(changeDataAutomatically, 5000);
 
     return () => clearInterval(interval);
   }, [currentData]);
@@ -30,7 +30,7 @@ const Hero = () => {
     // After the animation ends, clear the previousData state to hide it
     const timer = setTimeout(() => {
       setAnimate(false);
-    }, 500);
+    }, 2000);
     return () => clearTimeout(timer);
   }, [currentData]);
 

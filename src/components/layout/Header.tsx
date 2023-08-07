@@ -2,10 +2,12 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import { navLink } from "../Data";
 const Header = () => {
   const [toggleActive, setToggleActive] = useState(false);
+  const [isHeaderFixed, setIsHeaderFixed] = useState(false);
+
   const pathname = usePathname();
   const getActiveLinkName = (currentLink: string) => {
     const activeLink = navLink.find((link) => link.link === currentLink);
@@ -13,16 +15,33 @@ const Header = () => {
     return activeLink ? activeLink.name : null;
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 300) {
+        setIsHeaderFixed(true);
+      } else {
+        setIsHeaderFixed(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
   return (
     <>
-      <nav className="bg-[#F4E8E4] h-[12vh] absolute left-0 top-0 right-0 w-full">
+      <nav className={`bg-[#F4E8E4] absolute left-0 top-0 right-0 w-full ${isHeaderFixed ? 'fixed-header' : ''}`}>
         <div className="container relative">
-          <div className="bg-[#8E8688] w-[68px] px-4 h-[180px] flex items-end pb-[12px] absolute -top-10">
+          <div className={`${isHeaderFixed ? 'bg-[#8E8688] px-4 w-[60px] h-[120px] flex items-end pb-[12px] absolute -top-10' : 'bg-[#8E8688] w-[68px] px-4 h-[180px] flex items-end pb-[12px] absolute -top-10'}`}>
             <Link href="/">
               <img src="/logo.svg" alt="" className="w-full" />
             </Link>
           </div>
-          <div className=" pt-24 pb-10 flex items-center justify-end">
+          <div className={`${isHeaderFixed ? 'pt-8 pb-4 flex items-center justify-end' : 'pt-24 pb-10 flex items-center justify-end'}`}>
             <div
               className={`mt-0 translate-y-[8px] mr-3 bg-[#8E8688] h-[2px] w-[150px] menu-images `}
             />
