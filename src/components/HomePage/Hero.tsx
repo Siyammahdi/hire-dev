@@ -1,10 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { sliderData } from "../Data";
 import { IHowWork } from "../Interface";
-// ... (existing imports)
 
 const Hero = () => {
   const [currentData, setCurrentData] = useState<IHowWork>(sliderData[0]);
@@ -13,24 +12,45 @@ const Hero = () => {
     const changeDataAutomatically = () => {
       const currentIndex = sliderData.findIndex((data) => data === currentData);
       const nextIndex = (currentIndex + 1) % sliderData.length;
-
       setCurrentData(sliderData[nextIndex]);
     };
 
     const interval = setInterval(changeDataAutomatically, 3000);
-
     return () => clearInterval(interval);
   }, [currentData]);
 
   const [animate, setAnimate] = useState(false);
+  const variants = {
+    open: {
+      transition: { staggerChildren: 0.07, delayChildren: 0.2 }
+    },
+    closed: {
+      transition: { staggerChildren: 0.05, staggerDirection: -1 }
+    }
+  };
+  const variants2 = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 }
+      }
+    },
+    closed: {
+      y: 18,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000, velocity: 100 }
+      }
+    }
+  };
 
   useEffect(() => {
     setAnimate(true);
-
     // After the animation ends, clear the previousData state to hide it
     const timer = setTimeout(() => {
       setAnimate(false);
-    }, 500);
+    }, 2500);
     return () => clearTimeout(timer);
   }, [currentData]);
 
@@ -38,17 +58,24 @@ const Hero = () => {
     <>
       <section className="bg-[#F4E8E4] h-[90vh] flex items-center">
         <div className="container flex flex-wrap items-center">
-          <div className="w-8/12 pr-10 ">
+          <div className="sm:w-8/12 pr-10 ">
             {/* Show the currentData with the slideIn animation */}
             {currentData && (
-              <div className={`pb-10 ${animate ? "animate-slideIn" : ""}`}>
-                <h4 className="text-[#8E8688] text-2xl font-medium">
+              <motion.div
+                  animate={animate ? "open" : "closed"}
+                  variants={variants}
+                  >
+                <motion.h4
+                    variants={variants2}
+                    className="text-[#8E8688] text-2xl font-medium">
                   {currentData?.title}
-                </h4>
-                <p className="text-[#8E8688] text-3xl font-bold uppercase">
+                </motion.h4>
+                <motion.p
+                    variants={variants2}
+                    className="text-[#8E8688] text-3xl font-bold uppercase">
                   {currentData?.description}
-                </p>
-              </div>
+                </motion.p>
+              </motion.div>
             )}
 
             <div className="flex flex-wrap mt-10">
@@ -57,21 +84,21 @@ const Hero = () => {
                   <div
                     className={`border-t-[2px] group ${
                       currentData?.title === data?.title
-                        ? "border-gray-400"
+                        ? "border-[#8e8688]"
                         : "border-white"
                     } pt-3 cursor-pointer transition-colors`}
                     onClick={() => setCurrentData(data)}
                   >
-                    <p className="text-[19px] text-[#8E8688]">{data?.title}</p>
-                    <p className="text-[#AA9B9F] text-[15px]">
-                      {data?.description}
+                    <p className="hidden sm:block text-sm lg:text-[19px] text-[#8E8688]">{data?.title}</p>
+                    <p className="hidden md:block text-[#AA9B9F] text-xs lg:text-[15px]">
+                      {data?.sort}
                     </p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="w-4/12">
+          <div className="w-4/12 hidden sm:block">
             <img src="/innovation.svg" alt="" />
           </div>
         </div>

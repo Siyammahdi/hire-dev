@@ -61,21 +61,24 @@ export const howWorks: IHowWork[] = [
 export const sliderData: IHowWork[] = [
   {
     title: "WEB SOLUTION",
-    description: "We design and develop interactive we apps",
+    description: "Crafting Web Experiences with Code and Creativity",
+    sort: "E-commerce, Blog portal, Corporate site..",
   },
   {
     title: "APPS DEVELOPMENT",
-    description: "We design and develop interactive we apps",
+    description: "Turning Ideas into Seamless Apps Experiences with Expertise",
+    sort: "IOS, Android Apps",
   },
   {
     title: "CUSTOMIZED SOLUTION",
-    description: "We design and develop interactive we apps",
+    description: "Tailored Solutions: Empowering Your Business's Unique Needs",
+    sort: "ERP, HRM, POS and others",
   },
 ];
 
 export const navLink = [
   { name: "Home", link: "/" },
-  { name: "Story", link: "/story" },
-  { name: "Work", link: "/works" },
+  // { name: "Story", link: "/story" },
+  // { name: "Work", link: "/works" },
   { name: "Contact", link: "/contact-us" },
 ];

@@ -6,7 +6,7 @@ const Ideas = () => {
           GROW YOUR IDEAS WITH US
         </p>
         <p className="text-[#AA9B9F] text-center text-base ">
-          UQIDEV is a Web design & development company in Bangladesh bringing
+          UQIDEV is a Web design & development company bringing
           you solutions of the very best kind to your technical challenges &
           ambitions. We hold huge specialization in putting up custom-made and
           quantifiable services within the fields of e-Commerce site
