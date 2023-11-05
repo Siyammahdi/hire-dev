@@ -15,9 +15,9 @@ const Header = () => {
 
   return (
     <>
-      <nav className="bg-[#F4E8E4]">
+      <nav className="bg-[#0000004f] backdrop-blur-[50px]">
         <div className="container relative">
-          <div className="bg-[#8E8688] w-[68px] px-4 h-[172px] flex items-end pb-[12px] absolute -top-10 z-10">
+          <div className="bg-[#262525] w-[68px] px-4 h-[172px] flex items-end pb-[12px] absolute -top-10 z-10">
             <Link href="/">
               <img src="/logo.svg" alt="" className="w-full" />
             </Link>

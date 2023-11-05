@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { sliderData } from "../Data";
 import { IHowWork } from "../Interface";
 
-const Hero = () => {
+const ServiceSlider = () => {
   const [currentData, setCurrentData] = useState<IHowWork>(sliderData[0]);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const Hero = () => {
 
   return (
     <>
-      <section className="bg-[#F4E8E4] h-[90vh] flex items-center">
+      <section className="bg-[#51200585] backdrop-blur-[50px] h-[90vh] flex items-center">
         <div className="container flex flex-wrap items-center">
           <div className="sm:w-8/12 pr-10 ">
             {/* Show the currentData with the slideIn animation */}
@@ -67,12 +67,12 @@ const Hero = () => {
                   >
                 <motion.h4
                     variants={variants2}
-                    className="text-[#8E8688] text-2xl font-medium">
+                    className="text-[#966e5d] text-2xl font-medium">
                   {currentData?.title}
                 </motion.h4>
                 <motion.p
                     variants={variants2}
-                    className="text-[#8E8688] text-3xl font-bold uppercase">
+                    className="text-[#966e5d] text-3xl font-bold uppercase">
                   {currentData?.description}
                 </motion.p>
               </motion.div>
@@ -84,12 +84,12 @@ const Hero = () => {
                   <div
                     className={`border-t-[2px] group ${
                       currentData?.title === data?.title
-                        ? "border-[#8e8688]"
-                        : "border-white"
+                        ? "border-white"
+                        : "border-[#8e8688]"
                     } pt-3 cursor-pointer transition-colors`}
                     onClick={() => setCurrentData(data)}
                   >
-                    <p className="hidden sm:block text-sm lg:text-[19px] text-[#8E8688]">{data?.title}</p>
+                    <p className="hidden sm:block text-sm lg:text-[19px] text-[#966e5d]">{data?.title}</p>
                     <p className="hidden md:block text-[#AA9B9F] text-xs lg:text-[15px]">
                       {data?.sort}
                     </p>
@@ -98,8 +98,8 @@ const Hero = () => {
               ))}
             </div>
           </div>
-          <div className="w-4/12 hidden sm:block">
-            <img src="/innovation.svg" alt="" />
+          <div className="w-4/12 hidden sm:flex justify-end">
+            <img src="/innovation.svg" alt="innovation" className="opacity-70 h-[140px]" />
           </div>
         </div>
       </section>
@@ -107,4 +107,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default ServiceSlider;

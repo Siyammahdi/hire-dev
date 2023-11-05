@@ -4,8 +4,8 @@ import Header from "../components/layout/Header";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "UQIDEV: On Demand Solution Provider",
-  description: "UQIDEV is a Web design & development company in Bangladesh bringing you solutions of the very best kind to your technical challenges & ambitions. We hold huge specialization in putting up custom-made and quantifiable services within the fields of e-Commerce site Development, Search Engine Optimization, Mobile app development and so on. Starting from presenting top of the line site design to accomplishing extremely successful digital marketing campaigns – we‘re all ears to your needs.",
+  title: "Uqidev: offering software outsourcing services and product development.",
+  description: "Uqidev is a software company providing custom made solutions in Java, Go, Python, Node.js, Angular and React. Let’s talk about your project!",
 };
 
 export default function RootLayout({
@@ -13,10 +13,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // #4e3232e6
   return (
     <html lang="en">
       <body>
-        <main>
+        <main className="bg-[url(/bg1.jpg)] bg-cover">
           <Header />
           <section className="min-h-[calc(100vh-105px)]">
             {children}

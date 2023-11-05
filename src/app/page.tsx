@@ -1,11 +1,15 @@
-import Hero from "@/components/HomePage/Hero";
+import ServiceSlider from "@/components/HomePage/ServiceSlider";
 import Ideas from "@/components/HomePage/Ideas";
 import WeWork from "@/components/HomePage/WeWork";
+import FirstSection from "@/components/HomePage/FirstSection";
+import AboutSection from "@/components/HomePage/AboutSection";
 
 export default function Home() {
   return (
     <>
-      <Hero />
+        <FirstSection/>
+      <ServiceSlider />
+        <AboutSection/>
       <Ideas />
       {/*<WeWork />*/}
     </>
