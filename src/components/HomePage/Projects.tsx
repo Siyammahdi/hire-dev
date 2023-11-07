@@ -1,11 +1,11 @@
 const Projects = () => {
   return (
-    <section className="bg-white">
+    <section className="bg-white relative">
       <div className="container py-[90px]">
-        <p className="text-[30px] font-bold pb-10 text-[#8F8688]">
+        <p className="text-[64px] font-bold  text-[#51565652] absolute top-[-46px]">
           We served
         </p>
-        <div className="flex gap-1 items-center">
+        <div className="flex gap-5 items-center flex-wrap">
           <div className="flex min-w-[108px]"><img src="/hurraayy.png" alt="hurraayy"/></div>
           <div className="flex min-w-[108px]"><img src="/bistro.jpeg" alt="bistro central"/></div>
           <div className="flex w-[92px] max-h-[92px] p-2 bg-[#0f0f0f]"><img src="/next.jpeg" alt="next ventures"/></div>

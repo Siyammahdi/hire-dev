@@ -77,8 +77,9 @@ export const sliderData: IHowWork[] = [
 ];
 
 export const navLink = [
+  { name: "UQIDEV", link: "/" },
   { name: "Our Story", link: "/story" },
-  { name: "Works", link: "/works" },
+  // { name: "Works", link: "/works" },
   { name: "Career", link: "/career" },
   { name: "Contact", link: "/contact-us" },
 ];

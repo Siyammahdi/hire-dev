@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="bg-[url(/bg1.jpg)] bg-cover">
+        <main className="bg-[url(/bg1.jpg)] bg-[30%] md:bg-left-bottom bg-cover">
           <Header />
           <section className="min-h-[calc(100vh-105px)]">
             {children}

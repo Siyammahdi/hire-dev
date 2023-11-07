@@ -2,21 +2,21 @@ import { howWorks } from "../Data";
 
 const WeWork = () => {
   return (
-    <section className='py-[150px] bg-[#fff] backdrop-blur-[10px]'>
+    <section className='pt-[250px] py-[150px] bg-[#fff] backdrop-blur-[10px]'>
       <div className="container ">
-          <div className="flex items-center justify-between gap-6">
-              <div className=" w-6/12">
-                  <p className="text-[64px] font-bold  text-[#51565652] absolute top-[36px]">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className=" md:w-6/12">
+                  <p className="text-[64px] font-bold  text-[#51565652] absolute top-[125px]">
                       About Us
                   </p>
                   <div className="flex flex-wrap justify-center gap-5 text-gray-500 text-sm">
-                      UQIDEV, a software development company based in Dhaka, Bangladesh, offers end-to-end development services across various technologies and  serving clients in the United States and Europe. <br/>
-                      <br/>We prioritize client results and ongoing learning in this competitive field. Our focus extends beyond code quality to the long-term value of the products we create. We embrace Agile methodologies and tailor our approach to each project.
+                      <b>UQIDEV, a software development company based in Dhaka, Bangladesh, offers end-to-end development services across various technologies and  serving clients in the United States and Europe.</b>
+                      We prioritize client results and ongoing learning in this competitive field. Our focus extends beyond code quality to the long-term value of the products we create. We embrace Agile methodologies and tailor our approach to each project.
                       As software partners, we aim to enhance business value and provide nimble solutions. Our approach fosters relationships, and our software drives impact.
                   </div>
               </div>
 
-              <div className="w-6/12">
+              <div className="md:w-6/12">
                   {/*<img src="/innovation.svg" alt="" />*/}
 
                   <div className="flex gap-1 flex-wrap">

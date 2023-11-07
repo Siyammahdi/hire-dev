@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <>
         <FirstSection/>
-        <AboutSection/>
         <ServiceSlider />
+        <AboutSection/>
       <Projects />
       {/*<WeWork />*/}
     </>

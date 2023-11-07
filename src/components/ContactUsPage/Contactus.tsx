@@ -26,19 +26,17 @@ const ContactUs = () => {
           {/*</div>*/}
         </div>
 
-        <div className="bg-[#0000004f] lg:w-1/2 flex text-[#8f8688] w-full rounded-md">
-          <div className=" flex gap-2 items-center">
+        <div className="bg-[#0000004f] mt-5 md:m-0 lg:w-1/2 flex text-[#8f8688] w-full rounded-md justify-center">
+          <div className=" flex gap-2 items-center flex-wrap">
             <Link target="_blank" href="https://api.whatsapp.com/send?phone=8801743949931">
               <button className="py-3 px-8 text-xs bg-[#624948]/30 hover:bg-[#624948] rounded text-amber-100">
                 <WhatsApp />
                 <div>WhatsApp</div>
               </button>
             </Link>
-
-
             <Link href='mailto://syedshihabdu@gmail.com'>
               <button className="py-3 px-8 text-xs bg-[#624948]/30 hover:bg-[#624948] rounded text-amber-100">
-                <LucideMail/>
+                <Mail/>
                 <div>Email</div>
               </button>
             </Link>
