@@ -2,16 +2,50 @@ import { howWorks } from "../Data";
 
 const WeWork = () => {
   return (
-    <>
-      <section className="container py-[150px]">
-        <p className="text-[30px] font-bold text-center pb-10 text-[#8F8688]">
-          HOW WE WORK
-        </p>
-        <div className="flex flex-wrap justify-center gap-5">
-            DevNest, a software development company based in Cluj-Napoca and Sibiu, Romania, offers end-to-end development services across various technologies. We're located in Cluj-Napoca, serving clients in the United States and Europe. We prioritize client results and ongoing learning in this competitive field. Our focus extends beyond code quality to the long-term value of the products we create. We embrace Agile methodologies and tailor our approach to each project. As software partners, we aim to enhance business value and provide nimble solutions. Our approach fosters relationships, and our software drives impact.
-        </div>
-      </section>
-    </>
+    <section className='py-[150px] bg-[#fff] backdrop-blur-[10px]'>
+      <div className="container ">
+          <div className="flex items-center justify-between gap-6">
+              <div className=" w-6/12">
+                  <p className="text-[64px] font-bold  text-[#51565652] absolute top-[36px]">
+                      About Us
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-5 text-gray-500 text-sm">
+                      UQIDEV, a software development company based in Dhaka, Bangladesh, offers end-to-end development services across various technologies and  serving clients in the United States and Europe. <br/>
+                      <br/>We prioritize client results and ongoing learning in this competitive field. Our focus extends beyond code quality to the long-term value of the products we create. We embrace Agile methodologies and tailor our approach to each project.
+                      As software partners, we aim to enhance business value and provide nimble solutions. Our approach fosters relationships, and our software drives impact.
+                  </div>
+              </div>
+
+              <div className="w-6/12">
+                  {/*<img src="/innovation.svg" alt="" />*/}
+
+                  <div className="flex gap-1 flex-wrap">
+                      <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">
+                          <p>Certified Experienced Engineers</p>
+                      </div>
+                      <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">
+                          <p>Cost Optimization</p>
+                      </div>
+                      <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">
+                          <p>Expert Consultation</p>
+                      </div>
+                      <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">
+                          <p>DevOps</p>
+                      </div>
+                      <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">
+                          <p>Quality</p>
+                      </div>
+                      <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">
+                          <p>Accountability</p>
+                      </div>
+
+                  </div>
+
+              </div>
+          </div>
+
+      </div>
+    </section>
   );
 };
 

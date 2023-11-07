@@ -66,7 +66,7 @@ export const sliderData: IHowWork[] = [
   },
   {
     title: "APPS DEVELOPMENT",
-    description: "Turning Ideas into Seamless Apps Experiences with Expertise",
+    description: "Turning Projects into Seamless Apps Experiences with Expertise",
     sort: "IOS, Android Apps",
   },
   {
@@ -77,8 +77,8 @@ export const sliderData: IHowWork[] = [
 ];
 
 export const navLink = [
-  { name: "Home", link: "/" },
-  // { name: "Story", link: "/story" },
-  // { name: "Work", link: "/works" },
+  { name: "Our Story", link: "/story" },
+  { name: "Works", link: "/works" },
+  { name: "Career", link: "/career" },
   { name: "Contact", link: "/contact-us" },
 ];

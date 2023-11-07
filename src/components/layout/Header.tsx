@@ -24,7 +24,7 @@ const Header = () => {
           </div>
           <div className=" pt-24 pb-10 flex items-center justify-end">
             <div
-              className={`mt-0 hidden sm:block translate-y-[8px] mr-3 bg-[#8E8688] h-[2px] w-[150px] menu-images `}
+              className={`mt-0 hidden sm:block translate-y-[8px] mr-3 bg-black h-[2px] w-[150px] menu-images `}
             />
             {getActiveLinkName(pathname) !== navLink[0].name ||
             getActiveLinkName(pathname) === null ? (
@@ -32,7 +32,7 @@ const Header = () => {
                 {getActiveLinkName(pathname)}
               </p>
             ) : (
-                <p className="text-3xl font-bold text-[#8e8688] uppercase font-rajdhani">
+                <p className="text-3xl font-bold text-black uppercase font-rajdhani">
                   UQIDEV
                 </p>
               // <img
@@ -42,17 +42,17 @@ const Header = () => {
               // />
             )}
 
-            <button
-              className={` relative !z-[9999] navToggle ${
-                toggleActive ? "active" : ""
-              }`}
-              onClick={() => setToggleActive(!toggleActive)}
-            >
-              {/*<span className={`icon-bar`} />*/}
-              <span className={`icon-bar`} />
-              <span className={`icon-bar`} />
-              <span className={`icon-bar`} />
-            </button>
+            {/*<button*/}
+            {/*  className={` relative !z-[9999] navToggle ${*/}
+            {/*    toggleActive ? "active" : ""*/}
+            {/*  }`}*/}
+            {/*  onClick={() => setToggleActive(!toggleActive)}*/}
+            {/*>*/}
+            {/*  /!*<span className={`icon-bar`} />*!/*/}
+            {/*  <span className={`icon-bar`} />*/}
+            {/*  <span className={`icon-bar`} />*/}
+            {/*  <span className={`icon-bar`} />*/}
+            {/*</button>*/}
           </div>
         </div>
       </nav>

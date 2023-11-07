@@ -1,6 +1,7 @@
 "use client";
 
 import {FileBarChart, LucideCalendarClock} from "lucide-react";
+import Link from "next/link";
 
 const FirstSection = () => {
 
@@ -19,45 +20,49 @@ const FirstSection = () => {
                     Outsourcing Software Development in Bangladesh
                 </h1>
                   <div className="mt-5 flex gap-2">
+                      <Link target="_blank" href="https://calendar.app.google/EinFdAWjpNGWFgZa8">
                       <button className="py-3 px-8 text-xs bg-[#624948]/30 hover:bg-[#624948] rounded text-amber-100">
                           <LucideCalendarClock/>
                           <div>Set Meeting</div>
                       </button>
+                      </Link>
+                      <Link target="_blank" href='https://forms.gle/z5RDZPWx9TZX4VTX9'>
                       <button className="py-3 px-8 text-xs bg-[#624948] hover:bg-[#624948]/30 rounded text-amber-100">
                           <FileBarChart/>
                           <div>Get Quotation</div>
                       </button>
+                  </Link>
                   </div>
               </div>
 
 
           </div>
-          <div className="w-6/12 hidden sm:block">
-            {/*<img src="/innovation.svg" alt="" />*/}
+          {/*<div className="w-6/12 hidden sm:block">*/}
+          {/*  /!*<img src="/innovation.svg" alt="" />*!/*/}
 
-              <div className="flex gap-1 flex-wrap">
-                  <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">
-                        <p>Certified Experienced Engineers</p>
-                  </div>
-                  <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">
-                        <p>Cost Optimization</p>
-                  </div>
-                  <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">
-                        <p>Expert Consultation</p>
-                  </div>
-                  <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">
-                        <p>Azile</p>
-                  </div>
-                  <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">
-                        <p>Quality</p>
-                  </div>
-                  <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">
-                        <p>Accountability</p>
-                  </div>
+          {/*    <div className="flex gap-1 flex-wrap">*/}
+          {/*        <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">*/}
+          {/*              <p>Certified Experienced Engineers</p>*/}
+          {/*        </div>*/}
+          {/*        <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">*/}
+          {/*              <p>Cost Optimization</p>*/}
+          {/*        </div>*/}
+          {/*        <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">*/}
+          {/*              <p>Expert Consultation</p>*/}
+          {/*        </div>*/}
+          {/*        <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">*/}
+          {/*              <p>Azile</p>*/}
+          {/*        </div>*/}
+          {/*        <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">*/}
+          {/*              <p>Quality</p>*/}
+          {/*        </div>*/}
+          {/*        <div className="bg-amber-900 flex h-20 items-end p-3 text text-xs uppercase w-40 leading-[11px] text-[#b89e7f]">*/}
+          {/*              <p>Accountability</p>*/}
+          {/*        </div>*/}
 
-              </div>
+          {/*    </div>*/}
 
-          </div>
+          {/*</div>*/}
         </div>
       </section>
     </>
