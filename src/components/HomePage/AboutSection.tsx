@@ -2,7 +2,7 @@ import { howWorks } from "../Data";
 
 const WeWork = () => {
   return (
-    <section className='pt-[250px] py-[150px] bg-[#fff] backdrop-blur-[10px]'>
+    <section className='pt-[250px] relative py-[150px] bg-[#fff] backdrop-blur-[10px]'>
       <div className="container ">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className=" md:w-6/12">
