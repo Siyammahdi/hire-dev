@@ -17,7 +17,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsHeaderFixed(window.scrollY >= 200);
+      setIsHeaderFixed(window.scrollY >= 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -71,7 +71,7 @@ const Header = () => {
 
       {toggleActive && (
         <section
-          className={`animate-nav h-[100vh] w-full fixed left-0 top-0 bottom-0 right-0 bg-[#686262b7] z-[9] flex justify-center items-center`}
+          className={`animate-nav backdrop-blur-sm h-[100vh] w-full fixed left-0 top-0 bottom-0 right-0 bg-[#686262b7] z-[9] flex justify-center items-center`}
         >
           <ul className="flex flex-col gap-y-5 ">
             {" "}
@@ -80,7 +80,7 @@ const Header = () => {
                 <Link
                   onClick={() => setToggleActive(!toggleActive)}
                   href={link.link}
-                  className="hover:text-[black] hover:underline font-semibold text-[#292929] "
+                  className="hover:text-[black] hover:underline font-semibold text-[#292929] uppercase"
                 >
                   {link.name}
                 </Link>

@@ -66,9 +66,9 @@
   }
 
   .navToggle.active .icon-bar:nth-of-type(1) {
-    -webkit-transform: rotate(44deg);
-    transform: rotate(55deg);
-    top: 10px;
+    -webkit-transform: rotate(50deg);
+    transform: rotate(50deg);
+    top: 11px;
   }
   .navToggle.active .icon-bar:nth-of-type(2) {
     opacity: 0;
@@ -77,12 +77,12 @@
     opacity: 0;
   }
   .navToggle.active .icon-bar {
-    background-color: black;
+    background-color: #292929;
   }
 
   .navToggle.active .icon-bar:nth-of-type(4) {
-    -webkit-transform: rotate(125deg);
-    transform: rotate(125deg);
+    -webkit-transform: rotate(130deg);
+    transform: rotate(130deg);
     top: -10px;
   }
   /* burger menu animation  */
@@ -141,7 +141,21 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  animation: sticky 1s ease-in-out;
+}
+
+@keyframes sticky {
+    0% {
+      -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+      transform: translateY(-100%);
+  }
+
+  100% {
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+  }
 }

@@ -2,7 +2,7 @@ import { LinkedIn, Mail, Twitter, WhatsApp } from "../Icon";
 
 const ContactUs = () => {
   return (
-    <section className="container flex flex-wrap items-center py-[150px]">
+    <section className="container flex flex-wrap py-[150px]">
       <div className="w-full lg:w-1/2 pr-4">
         <p className="font-bold text-3xl">Contact </p>
 

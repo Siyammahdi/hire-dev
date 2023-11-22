@@ -57,7 +57,7 @@ const Hero = () => {
                   <div
                     className={`border-t-[2px] group ${
                       currentData?.title === data?.title
-                        ? "border-gray-400"
+                        ? "border-[#8E8688]"
                         : "border-white"
                     } pt-3 cursor-pointer transition-colors`}
                     onClick={() => setCurrentData(data)}
