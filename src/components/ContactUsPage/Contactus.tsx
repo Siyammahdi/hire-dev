@@ -8,7 +8,7 @@ const ContactUs = () => {
     <div className="backdrop-blur-[30px] h-full min-h-[calc(100vh-105px)]">
       <div className="container flex flex-wrap py-[150px] ">
         <div className="w-full lg:w-1/2 pr-4 text-[#8f8688]">
-          <p className="font-bold text-3xl">Contact </p>
+          <p className="font-bold text-3xl">Contact</p>
 
           <p className="text-lg leading-8 pt-5">
              UQIDEV TECHNOLOGIES
