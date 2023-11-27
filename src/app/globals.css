@@ -42,9 +42,10 @@
   /* burger menu animation  */
   .navToggle {
     padding: 0px 0px 4px 0px;
-    -webkit-transform: all 0.4s linear;
-    transform: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    transition: all 0.4s linear;
     margin-left: 10px;
+    width: 30px;
   }
   .navToggle .icon-bar {
     width: 35px;
@@ -65,10 +66,21 @@
     width: 25px;
   }
 
+  .navToggle:hover .icon-bar:nth-child(1) {
+    width: 26px;
+  }
+  .navToggle:hover .icon-bar:nth-child(2) {
+    width: 23px;
+  }
+  .navToggle:hover .icon-bar:nth-child(3) {
+    width: 30px;
+  }
+
   .navToggle.active .icon-bar:nth-of-type(1) {
-    -webkit-transform: rotate(50deg);
-    transform: rotate(50deg);
-    top: 11px;
+    -webkit-transform: rotate(130deg);
+    transform: rotate(130deg);
+    top: 10px;
+    width: 100%;
   }
   .navToggle.active .icon-bar:nth-of-type(2) {
     opacity: 0;
@@ -77,12 +89,12 @@
     opacity: 0;
   }
   .navToggle.active .icon-bar {
-    background-color: #292929;
+    background-color: #8e8688;
   }
 
   .navToggle.active .icon-bar:nth-of-type(4) {
-    -webkit-transform: rotate(130deg);
-    transform: rotate(130deg);
+    -webkit-transform: rotate(140deg);
+    transform: rotate(140deg);
     top: -10px;
   }
   /* burger menu animation  */
@@ -91,11 +103,11 @@
 
   @keyframes slideIn {
     0% {
-      transform: translateY(100%);
+      transform: translateY(-100%);
       opacity: 0;
     }
     100% {
-      transform: translateY(0);
+      transform: translateY(100%);
       opacity: 1;
     }
   }

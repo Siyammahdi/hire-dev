@@ -12,4 +12,5 @@ export type Project = {
 export interface IHowWork {
   title: string;
   description: string;
+  sort?: string;
 }
