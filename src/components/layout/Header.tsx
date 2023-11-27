@@ -2,31 +2,16 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect} from "react";
+import { useState } from "react";
 import { navLink } from "../Data";
 const Header = () => {
   const [toggleActive, setToggleActive] = useState(false);
-  const [isHeaderFixed, setIsHeaderFixed] = useState(false);
-
   const pathname = usePathname();
   const getActiveLinkName = (currentLink: string) => {
     const activeLink = navLink.find((link) => link.link === currentLink);
 
     return activeLink ? activeLink.name : null;
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsHeaderFixed(window.scrollY >= 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
 
   return (
     <>
@@ -37,13 +22,13 @@ const Header = () => {
               <img src="/logo.svg" alt="" className="w-full" />
             </Link>
           </div>
-          <div className={`${isHeaderFixed ? 'pt-8 pb-4 flex items-center justify-end' : 'pt-24 pb-10 flex items-center justify-end'}`}>
+          <div className=" pt-24 pb-10 flex items-center justify-end">
             <div
               className={`mt-0 hidden sm:block translate-y-[8px] mr-3 bg-black h-[2px] w-[150px] menu-images `}
             />
             {getActiveLinkName(pathname) !== navLink[0].name ||
             getActiveLinkName(pathname) === null ? (
-              <p className="text-3xl font-bold text-[#8e8688] uppercase font-rajdhani">
+              <p className="text-3xl font-bold text-black uppercase font-rajdhani">
                 {getActiveLinkName(pathname)}
               </p>
             ) : (
