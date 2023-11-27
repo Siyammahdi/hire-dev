@@ -40,7 +40,7 @@ const TermsConditions = () => {
 
         Once you submit information through our website, you agree to be contacted by a member of our staff regarding your job application or inquiry. The same rules and rights apply to data information gathered about sales inquiries. We do not share this data with any third party.
 
-        We may use third-party services, such as Google Analytics, to collect, monitor, and analyze website visitor behavior. All data is anonymized to ensure no personal identification. Each provider is subject to its own <a href="/privacy" className="underline">privacy policy</a>.
+        We may use third-party services, such as Google Analytics, to collect, monitor, and analyze website visitor behavior. All data is anonymized to ensure no personal identification. Each provider is subject to its own privacy policy.
         </p>
         <h2 className="text-3xl font-bold font-rajdhani mb-4 text-gray-200">Use</h2>
         <p className="mb-6 text-gray-300">
