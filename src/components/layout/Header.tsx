@@ -28,7 +28,7 @@ const Header = () => {
             />
             {getActiveLinkName(pathname) !== navLink[0].name ||
             getActiveLinkName(pathname) === null ? (
-              <p className="text-3xl font-bold text-[#8e8688] uppercase font-rajdhani">
+              <p className="text-3xl font-bold text-black uppercase font-rajdhani">
                 {getActiveLinkName(pathname)}
               </p>
             ) : (

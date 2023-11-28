@@ -82,4 +82,7 @@ export const navLink = [
   // { name: "Works", link: "/works" },
   { name: "Career", link: "/career" },
   { name: "Contact", link: "/contact-us" },
+  {name:"Privacy",link:"/privacy"},
+  {name:"Career", link:"/career"},
+  {name:"Our Story",link:"/our-story"}
 ];
