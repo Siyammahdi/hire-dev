@@ -1,3 +1,5 @@
+import { ScrollArea } from '@/components/ui/scroll-area';
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 interface Project {
@@ -73,7 +75,8 @@ const Portfolio: React.FC = () => {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <div className=" text-gray-200 h-[74vh] flex flex-col items-center py-12 px-5">
+<ScrollArea>
+<div className=" text-gray-200 h-[74vh] flex flex-col items-center py-12 px-5">
       {/* Marketing Text */}
       <div className="max-w-2xl text-center px-4 mb-10">
         <h1 className="text-4xl font-bold text-gray-300 mb-4">Portfolio</h1>
@@ -111,10 +114,12 @@ const Portfolio: React.FC = () => {
             onClick={() => handleProjectClick(project)}
             className="relative cursor-pointer overflow-hidden group"
           >
-            <img
+            <Image
               src={project.imageUrl}
               alt={project.title}
               className="w-full h-64 object-cover transform transition-transform duration-300 group-hover:scale-105"
+              height={250}
+              width={250}
             />
             <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
               <div className="text-center text-white px-4">
@@ -132,21 +137,24 @@ const Portfolio: React.FC = () => {
           <div className="relative bg-white rounded-lg max-w-2xl p-6 text-gray-800 w-full mx-4">
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold"
+              className="absolute top-0 right-2 text-gray-500 hover:text-gray-700 text-2xl font-bold"
             >
               &times;
             </button>
-            <img
+            <Image
               src={selectedProject.imageUrl}
               alt={selectedProject.title}
               className="w-full h-64 object-cover rounded-md mb-4"
+              height={250}
+              width={250}
             />
             <h3 className="text-2xl font-semibold">{selectedProject.title}</h3>
-            <p className="mt-4 text-gray-600 font-light">{selectedProject.description}</p>
+            <p className="mt-4 text-gray-600 text-base font-light">{selectedProject.description}</p>
           </div>
         </div>
       )}
     </div>
+</ScrollArea>
   );
 };
 
