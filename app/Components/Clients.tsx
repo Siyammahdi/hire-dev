@@ -8,7 +8,7 @@ import Logo5 from "@/public/clients/logo5.png"
 
 const Clients = () => {
     return (
-        <div className='flex items-center w-2/5 gap-10 m-10'>
+        <div className='flex items-center md:w-3/5 lg:w-2/5 gap-10 m-5 lg:m-10'>
             <div>
                 <Image src={Logo1} alt="logo1" height={100} width={100} />
             </div>

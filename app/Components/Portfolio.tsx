@@ -76,26 +76,25 @@ const Portfolio: React.FC = () => {
 
   return (
 <ScrollArea>
-<div className=" text-gray-200 h-[74vh] flex flex-col items-center py-12 px-5">
+<div className=" text-gray-200 h-[74vh] flex flex-col items-center md:py-12 px-1 md:px-5">
       {/* Marketing Text */}
-      <div className="max-w-2xl text-center px-4 mb-10">
-        <h1 className="text-4xl font-bold text-gray-300 mb-4">Portfolio</h1>
-        <p className="text-gray-300 font-light mb-6">
-          At our company, we create innovative solutions tailored to meet client needs.
-          From web development to marketing
+      <div className="md:px-4 mb-10">
+        <h1 className="text-3xl lg:text-5xl  font-bold text-gray-300 mb-4">Portfolio</h1>
+        <p className="text-sm lg:text-lg leading-relaxed text-gray-300 font-light mb-6">
+        At Uqidev, we believe in crafting innovative and scalable software solutions that help businesses achieve their goals. With a team of passionate developers, we specialize in creating customized applications that deliver exceptional user experiences and measurable results.
         </p>
-        <p className="text-lg font-light text-gray-300">
+        <p className="text-sm lg:text-lg leading-relaxed font-light text-gray-300">
           Explore our portfolio and see the quality we deliver to help clients achieve success.
         </p>
       </div>
 
       {/* Category Tabs */}
-      <div className="flex space-x-4 mb-8 font-light text-lg border-b w-full border-gray-700">
+      <div className="text-[10px] md:text-sm lg:text-lg leading-relaxed flex space-x-4 mb-8 font-light border-b w-full border-gray-700">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`px-4 py-2 rounded-full transition ${
+            className={`md:px-4 py-2 rounded-full transition ${
               activeCategory === category
                 ? "bg-transparent font-medium text-white"
                 : "bg-transparent text-gray-400 hover:-translate-y-1"
@@ -107,7 +106,7 @@ const Portfolio: React.FC = () => {
       </div>
 
       {/* Portfolio Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl px-4">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 w-full max-w-5xl px-1 md:px-4">
         {filteredProjects.map((project) => (
           <div
             key={project.id}
@@ -117,7 +116,7 @@ const Portfolio: React.FC = () => {
             <Image
               src={project.imageUrl}
               alt={project.title}
-              className="w-full h-64 object-cover transform transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-44 md:h-64 object-cover transform transition-transform duration-300 group-hover:scale-105"
               height={250}
               width={250}
             />
