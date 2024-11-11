@@ -6,7 +6,7 @@ import React from 'react';
 
 const About: React.FC = () => {
   return (
-    <ScrollArea className="h-[74vh] w-full ">
+    <ScrollArea className="h-[70vh] md:h-[74vh] w-full ">
       <div className="flex items-center justify-center text-gray-200">
         <div className="w-full max-w-3xl p-1 md:p-8 font-light pb-0">
           <h1 className="text-3xl lg:text-5xl font-bold text-gray-300 mb-6">About Us</h1>

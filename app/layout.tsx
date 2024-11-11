@@ -34,7 +34,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased bg-[url('../public/background4.jpg')] bg-cover`}
       >
-        <div className="">{children}</div>
+        <div className="">
+          {children}
+        </div>
       </body>
     </html>
   );

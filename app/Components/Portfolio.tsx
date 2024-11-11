@@ -76,7 +76,7 @@ const Portfolio: React.FC = () => {
 
   return (
 <ScrollArea>
-<div className=" text-gray-200 h-[74vh] flex flex-col items-center md:py-12 px-1 md:px-5">
+<div className=" text-gray-200 h-[70vh] md:h-[74vh] flex flex-col items-center md:py-12 px-1 md:px-5">
       {/* Marketing Text */}
       <div className="md:px-4 mb-10">
         <h1 className="text-3xl lg:text-5xl  font-bold text-gray-300 mb-4">Portfolio</h1>
