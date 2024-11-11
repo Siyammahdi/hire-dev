@@ -57,7 +57,6 @@ const ProjectForm: React.FC = () => {
           }}
           validationSchema={validationSchema}
           onSubmit={(values) => {
-            // Handle form submission here
             console.log('Form data:', values);
           }}
         >
