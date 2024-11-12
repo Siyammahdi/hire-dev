@@ -6,10 +6,10 @@ const nextConfig: NextConfig = {
 
 export default nextConfig;
 
-// next.config.js
-const path = require('path');
+// // next.config.js
+// const path = require('path');
 
-module.exports = {
-  distDir: 'build',
-};
+// module.exports = {
+//   distDir: 'build',
+// };
 

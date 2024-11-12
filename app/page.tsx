@@ -2,7 +2,6 @@
 
 import { useState, ReactNode } from "react";
 // import { useEffect } from "react";
-// import { motion } from "framer-motion";
 import { IoClose } from "react-icons/io5";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import Clients from "./Components/Clients";
@@ -10,6 +9,8 @@ import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Portfolio from "./Components/Portfolio";
 import Header from "./Components/Header";
+import GlowingText from "./Components/GlowingText";
+import { AnimatedText } from "./Components/AnimatedText";
 // import GlowingText from "./Components/GlowingText";
 
 type ModalContentType = "Portfolio" | "About" | "Contact" | null;
@@ -99,6 +100,7 @@ export default function Home() {
     setModalContent(null);
   };
 
+
   const renderModalContent = (): ReactNode => {
     switch (modalContent) {
       case "Portfolio":
@@ -112,6 +114,7 @@ export default function Home() {
     }
   };
 
+
   return (
     <div className="relative text-gray-200">
       {/* Background Blur Overlay */}
@@ -124,13 +127,19 @@ export default function Home() {
       {/* Main Content */}
       <div className="h-screen flex flex-col justify-between">
         <Header openModal={openModal} />
-        <div className="m-5 md:m-10 space-y-5">
-          <h2 className="uppercase text-3xl font-semibold lg:text-5xl md:w-1/2 lg:w-1/3">
-            Hire top quality developer
+        <div
+          className="m-5 md:m-10 space-y-5"
+        >
+          <h2
+            className="uppercase text-3xl font-semibold lg:text-5xl md:w-1/2 lg:w-1/3"
+          >
+            <AnimatedText className="relative -z-10" text="Hire top quality developer" />
           </h2>
-          <p className="text-[10px] md:text-xs lg:text-sm uppercase w-2/3 lg:w-1/3">
-            EVERYTHING THERE IS OUT THERE IN THIS WORLD, MORE OR LESS, PROVIDES FAMILIAR VISION
-          </p>
+          <div
+            className="text-[10px] md:text-xs lg:text-sm uppercase w-2/3 lg:w-1/3"
+          >
+            <AnimatedText className="relative -z-10" text="EVERYTHING THERE IS OUT THERE IN THIS WORLD, MORE OR LESS, PROVIDES FAMILIAR VISION" delay={0.6} />
+          </div>
         </div>
         <Clients />
       </div>
@@ -200,9 +209,9 @@ export default function Home() {
           position={positions[index]} 
         />
       ))} */}
-      {/* <div className="absolute">
+      <div className="absolute -z-10 top-20 bottom-20">
         <GlowingText />
-      </div> */}
+      </div>
     </div>
   );
 }

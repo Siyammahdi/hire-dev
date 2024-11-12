@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-
 const getRandomPosition = () => ({
-  x: Math.random() * (window.innerWidth / 2 - 150) + window.innerWidth / 2, 
+  x: Math.random() * (window.innerWidth / 2 - 150) + window.innerWidth / 2,
   y: Math.random() * (window.innerHeight - 50),
 });
 
@@ -17,8 +15,10 @@ const GlowingTextBlock = ({
 }: {
   text: string;
   isVisible: boolean;
-  position: { x: number; y: number };
+  position: { x: number; y: number } | null;
 }) => {
+  if (!position) return null; // Don't render if position is null
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -45,21 +45,22 @@ const texts = [
   "TO KEEP YOUR PROJECT ON TRACK AND DESTINED FOR GREATNESS, WE’RE ONLY AN EMAIL AWAY.",
   "SAVE YOUR STARTUP FROM ALL-CONSUMING BURN RATE ONLY $55 to $95 /hour",
   "NO PROJECT TOO COMPLEX, NO CODE TOO CURIOUS—WE SOLVE IT ALL",
-  "AND IF YOUR DEV TURNS INTO A DEVIL,WE DELIVER A NEW DEVOTEE",
+  "AND IF YOUR DEV TURNS INTO A DEVIL, WE DELIVER A NEW DEVOTEE",
   "FROM CODE CHAOS TO STREAMLINED SUCCESS, WE’RE JUST A CLICK AWAY",
   "TURN YOUR IDEAS INTO INNOVATION WITH DEVS WHO BREATHE MAGIC INTO CODE",
 ];
 
-
 export default function GlowingText() {
   const [visibleTextIndices, setVisibleTextIndices] = useState([0, 1]);
   const [isVisible, setIsVisible] = useState(true);
-  const [positions, setPositions] = useState(
-    Array(texts.length).fill(getRandomPosition())
+  const [positions, setPositions] = useState<Array<{ x: number; y: number } | null>>(
+    Array(texts.length).fill(null)
   );
 
-
   useEffect(() => {
+    // Set initial random positions on the client side only
+    setPositions(Array(texts.length).fill(0).map(() => getRandomPosition()));
+
     const interval = setInterval(() => {
       setIsVisible(false);
       setTimeout(() => {
@@ -71,16 +72,15 @@ export default function GlowingText() {
           (first + 1) % texts.length,
           (second + 1) % texts.length,
         ]);
-        setIsVisible(true); 
+        setIsVisible(true);
       }, 500);
-    }, 5000); 
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
-
   return (
-    <div className="relative text-gray-200">
+    <div className="text-gray-200">
       {/* Glowing Text Blocks */}
       {visibleTextIndices.map((index) => (
         <GlowingTextBlock
