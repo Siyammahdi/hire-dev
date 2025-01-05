@@ -43,11 +43,19 @@ const ProjectForm: React.FC = () => {
     }));
   };
 
-  const sendEmail = (values: any) => {
+  type EmailValues = {
+    name: string;
+    email: string;
+    service: string;
+    budget: string;
+    details: string;
+  };
+  
+  const sendEmail = (values: EmailValues) => {
     emailjs
       .send(
         "service_ss4ik74",
-        "template_0y5zmld", 
+        "template_0y5zmld",
         {
           name: values.name,
           email: values.email,
@@ -68,6 +76,7 @@ const ProjectForm: React.FC = () => {
         }
       );
   };
+  
 
   return (
     <div className="flex items-center justify-center h-[70vh] md:h-[74vh] text-gray-200">
