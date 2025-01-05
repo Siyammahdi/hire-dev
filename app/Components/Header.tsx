@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ openModal }) => {
           </Drawer.Trigger>
           <Drawer.Portal>
             <Drawer.Overlay className="fixed inset-0 bg-black/60" />
-            <Drawer.Content className="bg-gray-100 h-fit fixed bottom-0 left-0 right-0 rounded-t-2xl outline-none">
+            <Drawer.Content className="bg-[#292928] h-fit fixed bottom-0 left-0 right-0 rounded-t-2xl outline-none">
               {/* Accessible Drawer Title */}
               <Drawer.Title className="sr-only">Navigation Menu</Drawer.Title>
 

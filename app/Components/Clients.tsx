@@ -10,13 +10,13 @@ import Logo5 from "@/public/clients/logo5.png";
 const staggerContainer = {
   show: {
     transition: {
-      staggerChildren: 0.1, // Adjust this for the delay between logos
+      staggerChildren: 0.22, // Adjust this for the delay between logos
     },
   },
 };
 
 const fadeInFromBottom = {
-  hidden: { opacity: 0, y: 30, filter: "blur(10px)", scale: 1.2 }, // Start slightly below
+  hidden: { opacity: 0, y: 10, filter: "blur(10px)", scale: 1.2 }, // Start slightly below
   show: { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 },    // Animate to the original position
 };
 

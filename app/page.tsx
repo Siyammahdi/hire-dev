@@ -1,94 +1,65 @@
 "use client";
 
 import { useState, ReactNode } from "react";
-// import { useEffect } from "react";
 import { IoClose } from "react-icons/io5";
-import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { motion } from "framer-motion";
 import Clients from "./Components/Clients";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Portfolio from "./Components/Portfolio";
 import Header from "./Components/Header";
-import GlowingText from "./Components/GlowingText";
 import { AnimatedText } from "./Components/AnimatedText";
 // import GlowingText from "./Components/GlowingText";
+import LaptopScreen from "./Components/LaptopScreen";
+import ServiceCard from "./Components/ServiceCards";
+import Link from "next/link";
+import Meeting from "./Components/Meeting";
 
-type ModalContentType = "Portfolio" | "About" | "Contact" | null;
+type ModalContentType = "Portfolio" | "About" | "Contact" | "Meeting" | null;
 
-// const getRandomPosition = () => ({
-//   x: Math.random() * (window.innerWidth / 2 - 150) + window.innerWidth / 2, 
-//   y: Math.random() * (window.innerHeight - 50),
-// });
 
-// const GlowingTextBlock = ({
-//   text,
-//   isVisible,
-//   position,
-// }: {
-//   text: string;
-//   isVisible: boolean;
-//   position: { x: number; y: number };
-// }) => {
-//   return (
-//     <motion.div
-//       initial={{ opacity: 0 }}
-//       animate={{ opacity: isVisible ? 1 : 0 }}
-//       transition={{ duration: 0.5 }}
-//       style={{
-//         position: "absolute",
-//         top: `${position.y}px`,
-//         left: `${position.x}px`,
-//         fontSize: "0.7rem",
-//         color: "#fff",
-//         textShadow: "0px 0px 10px rgba(0, 0, 0, 1)",
-//       }}
-//       className="glowing-text w-[200px]"
-//     >
-//       {text}
-//     </motion.div>
-//   );
-// };
+const social = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+      delayChildren: 3,
+    },
+  },
+};
 
-// const texts = [
-//   "THE FUTURE OF YOUR STARTUP BEGINS WITH DEV TALENT THAT UNDERSTANDS YOUR VISION",
-//   "STUCK IN A DEVELOPMENT CRISIS? LET OUR TEAM RESCUE YOU WITH VISIONARY SOLUTIONS",
-//   "TO KEEP YOUR PROJECT ON TRACK AND DESTINED FOR GREATNESS, WE’RE ONLY AN EMAIL AWAY.",
-//   "SAVE YOUR STARTUP FROM ALL-CONSUMING BURN RATE ONLY $55 to $95 /hour",
-//   "NO PROJECT TOO COMPLEX, NO CODE TOO CURIOUS—WE SOLVE IT ALL",
-//   "AND IF YOUR DEV TURNS INTO A DEVIL,WE DELIVER A NEW DEVOTEE",
-//   "FROM CODE CHAOS TO STREAMLINED SUCCESS, WE’RE JUST A CLICK AWAY",
-//   "TURN YOUR IDEAS INTO INNOVATION WITH DEVS WHO BREATHE MAGIC INTO CODE",
-// ];
+const socialItems = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.25,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [modalContent, setModalContent] = useState<ModalContentType>(null);
-  // const [visibleTextIndices, setVisibleTextIndices] = useState([0, 1]);
-  // const [isVisible, setIsVisible] = useState(true);
-  // const [positions, setPositions] = useState(
-  //   Array(texts.length).fill(getRandomPosition())
-  // );
-
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setIsVisible(false);
-  //     setTimeout(() => {
-  //       setPositions((prevPositions) =>
-  //         prevPositions.map(() => getRandomPosition())
-  //       );
-
-  //       setVisibleTextIndices(([first, second]) => [
-  //         (first + 1) % texts.length,
-  //         (second + 1) % texts.length,
-  //       ]);
-  //       setIsVisible(true); 
-  //     }, 500);
-  //   }, 5000); 
-
-  //   return () => clearInterval(interval);
-  // }, []);
 
   const openModal = (content: ModalContentType) => {
     setModalContent(content);
@@ -100,7 +71,6 @@ export default function Home() {
     setModalContent(null);
   };
 
-
   const renderModalContent = (): ReactNode => {
     switch (modalContent) {
       case "Portfolio":
@@ -109,49 +79,84 @@ export default function Home() {
         return <About />;
       case "Contact":
         return <Contact />;
+      case "Meeting":
+        return <Meeting />;
       default:
         return null;
     }
   };
 
-
   return (
     <div className="relative text-gray-200">
-      {/* Background Blur Overlay */}
-      <div
+      <motion.div
+        className="absolute bg-[url('../public/noise-light.png')] h-full w-full top-0 left-0 opacity-60"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.6 }}
+        transition={{ duration: 0.8 }}
+      ></motion.div>
+      <motion.div
         className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ${isModalOpen ? "backdrop-blur-sm opacity-100" : "opacity-0 pointer-events-none"
           }`}
         onClick={closeModal}
-      ></div>
-
-      {/* Main Content */}
-      <div className="h-screen flex flex-col justify-between">
-        <Header openModal={openModal} />
-        <div
-          className="m-5 md:m-10 space-y-5"
-        >
-          <h2
-            className="uppercase text-3xl font-semibold lg:text-5xl md:w-1/2 lg:w-1/3"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isModalOpen ? 1 : 0 }}
+        exit={{ opacity: 0 }}
+      ></motion.div>
+      <motion.div
+        className="h-screen flex flex-col justify-between"
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
+        <motion.div variants={item}>
+          <Header openModal={openModal} />
+        </motion.div>
+        <motion.div className="m-5 md:m-10 space-y-5" variants={item}>
+          <motion.h2
+            className="text-2xl md:text-4xl font-semibold lg:text-6xl md:w-1/2 lg:w-1/2"
+            variants={item}
           >
-            <AnimatedText className="relative -z-10" text="Hire top quality developer" />
-          </h2>
-          <div
+            <AnimatedText
+              className="relative -z-10"
+              text="DELIVERING TOP CLASS DEVS FOR YOUR STARTUP"
+            />
+          </motion.h2>
+          <motion.div
             className="text-[10px] md:text-xs lg:text-sm uppercase w-2/3 lg:w-1/3"
+            variants={item}
           >
-            <AnimatedText className="relative -z-10" text="EVERYTHING THERE IS OUT THERE IN THIS WORLD, MORE OR LESS, PROVIDES FAMILIAR VISION" delay={0.6} />
-          </div>
-        </div>
-        <Clients />
-      </div>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 2,
+              }}
+              className="text-[10px] md:text-sm lg:text-2xl normal-case font-semibold relative text-[#5f5f5f] -z-10"
+            >
 
-      {/* Modal */}
+              <span className="text-white">Save time and money,</span> Hire dedicated experts and realize your vision with <span className="text-blue-400">speed</span> and <span className="text-purple-400">precision.</span>
+            </motion.p>
+            <motion.div className="my-4 space-x-4 relative z-50" variants={item}>
+              <button onClick={() => openModal("Meeting")} className="text-gray-800 px-4 py-2 rounded-full hover:bg-gray-300 bg-gray-200">Set a meeting</button>
+              <button onClick={() => openModal("About")} className="text-gray-200 px-4 py-2 rounded-full hover:bg-gray-200 border-2 hover:border-gray-200 hover:text-gray-800">About Us</button>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+        <motion.div variants={item}>
+          <Clients />
+        </motion.div>
+      </motion.div>
+
       <div
         className={`fixed inset-0 flex items-center justify-center transition-opacity z-50 duration-200 ${isModalOpen ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
+
       >
         <div
           className={`shadow-lg bg-black rounded-3xl p-3 md:p-6 w-11/12 max-w-6xl transform transition-transform duration-200 border-2 border-[#292928] ${isModalOpen ? "translate-y-0" : "translate-y-full"
             }`}
+
         >
           <button
             onClick={closeModal}
@@ -171,47 +176,57 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <motion.div
+        className="absolute bottom-10 right-6 lg:right-10 flex items-center gap-4 text-white mb-12 md:mb-0 text-lg md:text-2xl"
+        variants={social}
+        initial="hidden"
+        animate="show"
+      >
+        <motion.div className="flex items-center  text-gray-700 p-1 pl-4 rounded-full bg-white">
+          <Link href="https://wa.link/hpxctc"><p className="text-xs w-20">Connect with</p></Link>
+          <FaWhatsapp size={30} />
+        </motion.div>
 
-      {/* Social Icons */}
-      <div className="absolute -z-10 bottom-10 right-6 lg:right-10 flex gap-4 text-white mb-12 md:mb-0 text-lg md:text-2xl">
-        <a
-          href="https://linkedin.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-blue-500"
-        >
-          <FaLinkedin />
-        </a>
-        <a
-          href="https://github.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-gray-400"
-        >
-          <FaGithub />
-        </a>
-        <a
-          href="https://twitter.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-blue-400"
-        >
-          <FaTwitter />
-        </a>
+        {[
+          {
+            href: "https://linkedin.com",
+            icon: <FaLinkedin />,
+            hover: "hover:text-blue-500",
+          },
+          {
+            href: "https://github.com",
+            icon: <FaGithub />,
+            hover: "hover:text-gray-400",
+          },
+          {
+            href: "https://twitter.com",
+            icon: <FaTwitter />,
+            hover: "hover:text-blue-400",
+          },
+        ].map(({ href, icon, hover }, idx) => (
+          <motion.a
+            key={idx}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={hover}
+            variants={socialItems}
+          >
+            {icon}
+          </motion.a>
+        ))}
+      </motion.div>
+
+      <div className="absolute top-1/4 right-0">
+        <ServiceCard />
       </div>
 
-      {/* Glowing Text Blocks */}
-      {/* {visibleTextIndices.map((index) => (
-        <GlowingTextBlock
-          key={index}
-          text={texts[index]}
-          isVisible={isVisible}
-          position={positions[index]} 
-        />
-      ))} */}
-      <div className="absolute -z-10 top-20 bottom-20">
-        <GlowingText />
-      </div>
+      {/* <motion.div
+        className=""
+        variants={item}
+      >
+        <LaptopScreen />
+      </motion.div> */}
     </div>
   );
 }

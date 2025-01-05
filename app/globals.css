@@ -25,3 +25,44 @@ html, body {
     --radius: 0.5rem;
   }
 }
+
+
+:where([data-sonner-toast][data-styled="true"]) {
+  padding: 0 !important;
+  background:#1c1b1e !important;
+
+}
+
+*,
+*::before,
+*::after {
+  border-color: #2b2b2b !important; 
+}
+
+
+
+
+
+.card {
+  position: relative;
+  background-color: #111111;
+  color: white;
+  padding: 5px;
+  border-radius: 8px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 70%;
+  transform: translateX(-50%);
+  width: 150px; /* Adjust gradient width */
+  height: 1.4px; /* Adjust thickness */
+  background: var(--card-gradient); /* Dynamic gradient */
+  border-radius: 5px;
+}
+
+/* */
