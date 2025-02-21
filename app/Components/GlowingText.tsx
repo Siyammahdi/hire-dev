@@ -8,18 +8,18 @@ const services = [
     title: "React",
     description:
       "The library for web and native user interfaces. Next.js is built on the latest React features, including Server Components and Actions.",
-    icon: "/public/background.jpg", // Replace with your image path
+    icon: "/public/background.jpg",
   },
   {
     title: "Next.js",
     description:
       "The React framework for production, enabling server-side rendering and static site generation.",
-    icon: "/public/background2.jpg", // Replace with your image path
+    icon: "/public/background2.jpg", 
   },
   {
     title: "Tailwind CSS",
     description: "A utility-first CSS framework for rapidly building custom designs.",
-    icon: "/public/background3.jpg", // Replace with your image path
+    icon: "/public/background3.jpg", 
   },
 ];
 

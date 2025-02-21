@@ -221,12 +221,12 @@ export default function Home() {
         <ServiceCard />
       </div>
 
-      {/* <motion.div
+      <motion.div
         className=""
         variants={item}
       >
         <LaptopScreen />
-      </motion.div> */}
+      </motion.div>
     </div>
   );
 }
